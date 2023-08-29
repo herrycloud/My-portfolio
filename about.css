@@ -1,0 +1,137 @@
+
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background: url('background-image.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9); 
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 36px;
+  color: #1E90FF;
+}
+
+.about-container {
+  background: rgba(255, 255, 255, 0.8); 
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+
+.about-container {
+  animation: fade-in 1s ease-in-out;
+}
+
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.about-container h2 {
+  font-size: 24px;
+  color: #1E90FF; 
+  margin-bottom: 10px;
+}
+
+.about-container p {
+  margin-top: 10px;
+  color: #777;
+}
+
+.about-container .education,
+.about-container .certification,
+.about-container .skills,
+.about-container .interests,
+.about-container .contact {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+
+ul {
+  list-style: none;
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+ul li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+
+ul li:before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #1E90FF;
+}
+
+
+ul li {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slide-in 0.8s ease-in-out forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Contact section */
+.contact p {
+  margin-top: 20px;
+  color: #888;
+}
+
+/* Social link styling */
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: #333;
+  margin-right: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+  color: #1E90FF;
+}

@@ -466,85 +466,132 @@ footer {
     left: 30px;
     padding-right: 30px;
   }
-}
+/* Base styles */
 
-/* SMALL PHONES */
-@media (max-width: 480px) {
-  .nav__link:not(:last-child) {
-    display: none;
+/* ... Your existing styles ... */
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  /* Navigation */
+  nav {
+    height: auto;
   }
 
+  .nav__link--list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav__link--anchor {
+    margin: 8px 0;
+  }
+
+  .personal__logo {
+    font-size: 24px;
+    margin: 12px 0;
+  }
+
+  /* About Me Section */
+  .about-me__info--container {
+    text-align: center;
+  }
+
+  .about-me__picture--mask {
+    margin-bottom: 12px;
+  }
+
+  .about-me__info--title {
+    font-size: 28px;
+  }
+
+  .about-me__info--para {
+    font-size: 18px;
+  }
+
+  /* Technology Stack Section */
+  .language {
+    width: 50%;
+  }
+
+  /* Projects Section */
   .project__wrapper {
-    border-radius: 0;
+    flex-direction: column;
+  }
+
+  .project__img {
+    width: 100%;
+    max-height: 200px;
   }
 
   .project__description {
-    padding: 0;
-    left: 0;
-    width: 100%;
+    position: static;
+    max-width: 100%;
+    opacity: 1;
+    transform: none;
   }
 
-  .project__description--para {
-    display: none;
+  /* Footer */
+  .footer__social--list {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .project__description--links {
-    display: flex;
-    justify-content: center;
+  .footer__row {
+    padding: 5% 0;
   }
-
-  .project__description--title {
-    font-size: 32px;
-    line-height: 1;
-    text-align: center;
-  }
-
-  .project__description--sub-title {
-    text-align: center;
-    margin: 12px 0;
-  }
-  .project {
-    margin-bottom: 135px;
-  }
-  
-  .project__wrapper {
-    display: flex;
-    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .project__img {
-    width: 100%;
-    transition: all 500ms ease;
-  }
-  
-  .project:hover .project__wrapper:before {
-    transform: translateY(0);
-    opacity: 0.7;
-  }
-  
-  .project:hover .project__img {
-    transform: scale(1.07);
-    filter: blur(5px);
-  }
-  
-  /* Add more styling for the project description section */
-  
-/* Example usage of the software blue color */
-.section__title,
-.about-me__link,
-.language__name,
-.footer__social--link {
-    color: var(--software-blue);
+}
+/* Styles for the "hamburger" menu icon */
+.nav-toggle-label {
+  display: none;
+  cursor: pointer;
 }
 
-/* Responsive adjustments for small devices */
+.nav-toggle-label span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #242424;
+  margin: 6px auto;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Adjustments for smaller screens */
+/* Adjustments for smaller screens */
 @media (max-width: 768px) {
-    /* Adjustments for smaller screens */
+  /* ... Other styles ... */
+
+  /* Adjust the styles of the hamburger menu icon when the menu is open */
+  #nav-toggle:checked + nav .nav-toggle-label span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  #nav-toggle:checked + nav .nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #nav-toggle:checked + nav .nav-toggle-label span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
 }
 
-@media (max-width: 480px) {
-    /* Adjustments for even smaller screens */
+
+  /* Show the navigation links when the checkbox is checked */
+  #nav-toggle:checked + nav .nav__link--list {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Adjust the styles of the hamburger menu icon when the menu is open */
+  #nav-toggle:checked + nav .nav-toggle-label span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  #nav-toggle:checked + nav .nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #nav-toggle:checked + nav .nav-toggle-label span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
 }
